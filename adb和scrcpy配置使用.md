@@ -10,8 +10,6 @@ D:\路径\tools
 D:\路径\platform-tools
 ```
 
-
-
 scrcpy镜像网址：https://sourceforge.net/projects/scrcpy.mirror/
 
 ```
