@@ -1,7 +1,11 @@
-height: 480px;
+```css
+.center{
+position: absolute; // 绝对定位
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%); // 横轴-50%，竖轴-50%
+display: flex;
+justify-content: center;
+}
+```
 
-  margin: 0 auto;
-
-  padding: 1rem !important;
-
-  box-shadow: 0 2px 12px 0 rgba(0, 0, 0, .1);
