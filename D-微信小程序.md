@@ -73,6 +73,14 @@ let param = {
 
 **静默获取用户位置**
 
+```json
+"permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
+  },
+```
+
 ```js
   doLocal: function (latitude, longitude) {
     var that = this;
@@ -139,6 +147,10 @@ getPhone(event: any) {
 ```
 
 ## 隐私协议
+app.json
+```json
+,"__usePrivacyCheck__": true
+```
 
 ```js
 //隐私协议
@@ -175,8 +187,6 @@ navToSetting() {
   },
 ```
 
-
-
 ```js
 <!-- 隐私内容 -->
 <view wx:if="{{ showPrivacy }}" class="box-user ">
@@ -197,7 +207,7 @@ navToSetting() {
 
 ```css
 .box-user {
- position: fixed
+ position: fixed;
  top: 0;
  width: 100%;
  height: 100vh;
@@ -246,9 +256,11 @@ qiniuData: {},
 afterRead(e) {
     console.log(e);
     let that = this
+    let filename = e.detail.file.thumb.substring(11);//返回字符串后11位字符
     const file = e.detail.file;
     this.setData({
-      file,
+      filename,
+      file
     })
     let filePath = file.url
     let index = file.url.lastIndexOf('.')
@@ -256,6 +268,9 @@ afterRead(e) {
     let data = {
       ext: end
     }
+    this.setData({
+      ext: end
+    })
     console.log(data);
     wx.showLoading({
       title: '上传中...',
@@ -269,7 +284,7 @@ afterRead(e) {
       if (res.statusCode == 200) {
         console.log(res);
         this.setData({
-          qiniuData: res.data,
+          qiniuData: res.data
         })
         wx.uploadFile({
           url: 'https://upload-z2.qiniup.com',
@@ -288,12 +303,47 @@ afterRead(e) {
             let file = res.data.url
             console.log(file);
             that.setData({
-             'fileList[0].url': file
+              'fileList[0].url': file
             })
           }
         })
       }
     })
   },
+```
+
+# 微信下载
+
+```js
+wx.downloadFile({
+ url: res.data,//下载链接
+ success(res) {
+  if (res.statusCode == 200) {
+   wx.openDocument({
+    filePath: res.tempFilePath,
+    showMenu: true,
+    success(res) {
+     console.log('打开成功');
+    }
+   })
+  }
+ }
+})
+```
+## 页面栈跳转上一页
+
+```
+let pages = getCurrentPages();
+ //检查页面栈
+ //console.log(pages);
+ //判断页面栈中页面的数量是否有跳转(可以省去判断)
+ if(pages.length > 1){
+  //获取上一个页面实例对象
+  let prePage = pages[pages.length - 2];
+   //调用上一个页面实例对象的方法
+   prePage.onLoad();
+   //返回上一个页面
+   wx.navigateBack();
+}
 ```
 

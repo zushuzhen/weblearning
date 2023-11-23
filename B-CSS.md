@@ -9,6 +9,35 @@ display: flex;
 justify-content: center;
 }
 ```
+鼠标变小手
+
+```css
+ cursor: pointer;
+```
+
+文字不换行
+
+```css
+white-space: nowrap;
+```
+文字两端对齐
+```
+.custom-labe {
+  width: 140rpx;
+  display: flex;
+  text-align-last: justify;
+  justify-content: space-evenly;
+}
+
+.text-titl {
+  display: inline-block;
+  width: 140rpx;
+  font-size: 30rpx;
+  color: #f3f3f3;
+}
+```
+
+
 
 
 
@@ -76,3 +105,39 @@ justify-content: center;
 8. **阴影和轮廓**：`outline` 属性，定义元素的轮廓样式。
 9. **Unicode 和内容生成**：`content` 属性中的 Unicode 和 CSS 生成内容。
 10. **变量和自定义属性**：`var()` 函数和自定义属性的使用。
+
+
+
+
+
+
+
+## background属性及其子属性的完整列表
+
+| 属性                          | 描述                                        |1    |
+| ----------------------------- | --------------------------------------- | ---------------------------------------------------------- |
+| `background`                  | 用于设置所有背景属性的缩写属性。                           | 1|
+| `background-color`            | 设置元素的背景颜色。                                       |1|
+| `background-image`            | 设置一个或多个背景图像。                                   |
+| `background-repeat`           | 设置背景图像是否及如何重复。                               |
+| `background-position`         | 设置背景图像的起始位置。                                   |
+| `background-size`             | 设置背景图像的大小。                                       |
+| `background-origin`           | 设置背景图像的定位区域。                                   |
+| `background-clip`             | 设置背景颜色的绘制区域。                                   |
+| `background-attachment`       | 设置背景图像是否随着元素内容滚动。                         |
+| `background-blur` (CSS4)      | 设置背景的模糊程度。                                       |
+| `background-composite` (CSS4) | 设置背景图片的合成模式。                                   |
+| `background-break`            | 设置如何在元素的内联轴盒、块级轴盒或区块容器之间分页背景。 |
+| `background-origin`           | 设置背景图像的定位区域。                                   |
+| `background-clip`             | 设置背景颜色的绘制区域。                                   |
+| `background-color`            | 设置元素的背景颜色。       |2                                  |
+| `background-position-x`       | 设置背景图像的水平位置。        |2                             |
+| `background-position-y`       | 设置背景图像的垂直位置。   |3                                  |
+| `background-size`             | 设置背景图像的大小。     |4                                    |
+| `background-attachment`       | 设置背景图像是否随着元素内容滚动。     |3                      |
+| `background-image`            | 设置一个或多个背景图像。       |e                              |
+| `background-origin`           | 设置背景图像的定位区域。     |3                                |
+| `background-clip`             | 设置背景颜色的绘制区域。         |2                            |
+| `background-blend-mode`       | 设置元素的背景颜色和背景图像如何混合。                                     |e                   |
+| `background-composite` (CSS4) | 设置背景图片的合成模式。                                     |      w                           |
+| `background-break`            | 设置如何在元素的内联轴盒、块级轴盒或区块容器之间分页背景。 |
