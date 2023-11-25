@@ -134,18 +134,18 @@ ifconfig
  ```bash
 sudo apt install net-tools
  ```
- ![在这里插入图片描述](https://img-blog.csdnimg.cn/26d9e496599545f899e9b10519b7341d.png =700x)
+ ![在这里插入图片描述](https://img-blog.csdnimg.cn/26d9e496599545f899e9b10519b7341d.png)
 2、以上说明apt被某个进程锁住了，找到进程，kill掉，如下：
 ```bash
 ps afxlgrep apt
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/566dd1bcaa1e45cba15ef307cdde9d6b.png =700x)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/566dd1bcaa1e45cba15ef307cdde9d6b.png)
 3、强制重新配置软件包命令，升级apt，如果又报错。
 
 ```bash
 sudo dpkg --configure -a
 ```
-![在这里插入图片描述](https://img-blog.csdnimg.cn/cf035a16e38c4fb49a37a1913c2c5c33.png =700x)
+![在这里插入图片描述](https://img-blog.csdnimg.cn/cf035a16e38c4fb49a37a1913c2c5c33.png)
 
 4、使用下面两个指令删除占用进程
 ```bash

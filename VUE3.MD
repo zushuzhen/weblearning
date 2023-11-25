@@ -161,3 +161,27 @@ createApp(App).use(router).mount('#app')
 1，在终端安装组件
 
  npm install @types/node --save-dev
+
+## 五，不用路由(route)传值
+
+##### 传出
+
+```js
+const navto = (item,index) => {
+ let href = item.href
+ window.location.href = href+`?name=${index}`;
+}
+```
+##### 接收
+
+```js
+import { ref, onMounted } from "vue";
+onMounted(() => {
+  const queryString = window.location.search;
+  const params = new URLSearchParams(queryString);
+  const name = params.get('name');
+  console.log(name); // 输出接收到的name参数的值
+  console.log(typeof(name));
+  active.value =Number(name) 
+});
+```
