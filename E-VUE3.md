@@ -4,8 +4,6 @@
 import * as XLSX from 'xlsx';
 ```
 
-
-
 ```typescript
 <script setup lang="ts">
 import * as XLSX from 'xlsx';
