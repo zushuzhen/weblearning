@@ -1,26 +1,15 @@
-完美居中
-```css
-.center{
-position: absolute; /* 绝对定位 */
-top: 50%;
-left: 50%;
-transform: translate(-50%, -50%); /* 横轴-50%，竖轴-50% */
-display: flex;
-justify-content: center;
-}
-```
-鼠标变小手
+#### 鼠标变小手
 
 ```css
  cursor: pointer;
 ```
 
-文字不换行
+#### 文字不换行
 
 ```css
 white-space: nowrap;
 ```
-文字两端对齐
+#### 文字两端对齐
 ```
 .custom-labe {
   width: 140rpx;
@@ -37,7 +26,67 @@ white-space: nowrap;
 }
 ```
 
+#### 图片等比例
 
+```css
+.img{
+ background-image: url("@/assets/images/adoutbackground.png");
+ background-size: cover;
+}
+```
+## 超出...显示
+
+#### 1.不换行超出用...显示
+
+```
+white-space: nowrap; /* 防止文字换行 */
+overflow: hidden; /* 超出部分隐藏 */
+text-overflow: ellipsis; /* 超出部分显示省略号 */
+width: 200px; /* 容器宽度，根据需要调整 */
+border: 1px solid #ccc; /* 可选：添加边框以显示容器的边界 */
+```
+
+#### 2.超过3行用...显示
+
+```
+display: -webkit-box;
+-webkit-line-clamp: 3;
+-webkit-box-orient: vertical;
+overflow: hidden;
+```
+
+## 居中
+#### 1.盒子上下左右居中
+
+```css
+.image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+    .absolutely {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+    }
+    .relative {
+      position: relative;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+  }
+}
+```
+#### 2.完美居中
+```css
+.center{
+ position: absolute; /* 绝对定位 */
+ top: 50%;
+ left: 50%;
+ transform: translate(-50%, -50%); /* 横轴-50%，竖轴-50% */
+ display: flex;
+ justify-content: center;
+}
+```
 
 
 

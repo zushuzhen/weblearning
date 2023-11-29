@@ -183,3 +183,56 @@ onMounted(() => {
   active.value =Number(name) 
 });
 ```
+
+## 六，身份证
+
+##### 1.校验方法
+
+```
+const isCnNewID = (rule, value, callback) => {
+ var arrExp = [7, 9, 10, 5, 8, 4, 2, 1, 6, 3, 7, 9, 10, 5, 8, 4, 2];//加权因子
+ var arrValid = [1, 0, "X", 9, 8, 7, 6, 5, 4, 3, 2];//校验码
+ if (/^\d{17}\d|x$/i.test(value)) {
+  var sum = 0, idx;
+  for (var i = 0; i < value.length - 1; i++) {// 对前17位数字与权值乘积求和
+   sum += parseInt(value.substr(i, 1), 10) * arrExp[i];
+  }
+  // 计算模（固定算法）
+  idx = sum % 11;// 检验第18为是否与校验码相等
+  if (arrValid[idx] == value.substr(17, 1).toUpperCase()) {
+   callback()
+  } else {
+  callback("身份证格式有误")
+  }
+ } else {
+  callback("身份证格式有误")
+ }
+}
+```
+
+2.获取身份证中的信息
+
+```
+//当type=1时获取出生日期,type=2时获取性别,type=3时获取年龄
+
+  let birthday =IdCard.substring(6, 10) +"年" +IdCard.substring(10, 12) +"月" +IdCard.substring(12, 14) +"日";
+```
+1421
+```
+  if (parseInt(IdCard.substr(16, 1)) % 2 === 1) {
+    return "男";
+  } else {
+    return "女";
+  }
+```
+321
+```
+//获取年龄
+  var ageDate = new Date();
+  var month = ageDate.getMonth() + 1;
+  var day = ageDate.getDate();
+  var age = ageDate.getFullYear() - IdCard.substring(6, 10) - 1;
+  if (IdCard.substring(10, 12) < month ||(IdCard.substring(10, 12) === month &&IdCard.substring(12, 14) <= day)) {age++;}
+  if (age <= 0) {age = 1;}
+```
+
