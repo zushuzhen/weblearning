@@ -26,6 +26,8 @@ white-space: nowrap;
 }
 ```
 
+text-indent:2
+
 #### 图片等比例
 
 ```css
