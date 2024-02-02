@@ -2,22 +2,22 @@
   "name": "vue3",
   "version": "0.0.0",
   "private": true,
-  "type": "commonjs",
+  "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
-    "vite-plugin-element-plus": "^0.0.12",
-    "vue": "^3.3.10",
-    "vue-router": "^4.2.5"
+    "vue": "^3.3.10"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.5.1",
-    "autoprefixer": "^10.4.16",
-    "postcss-pxtorem": "^6.0.0",
-    "unplugin-auto-import": "^0.17.2",
+    "postcss": "^8.4.32",
+    "postcss-loader": "^7.3.3",
+    "postcss-px-to-viewport": "^1.1.1",
+    "postcss-px-to-viewport-8-plugin": "^1.2.3",
+    "sass": "^1.69.5",
     "vite": "^5.0.5"
   }
 }

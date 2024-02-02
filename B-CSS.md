@@ -9,7 +9,16 @@
 ```css
 white-space: nowrap;
 ```
+#### 列表一行两列
+
+```
+display: grid;
+grid-template-columns: repeat(2, 1fr);
+grid-gap: 10px;
+```
+
 #### 文字两端对齐
+
 ```
 .custom-labe {
   width: 140rpx;

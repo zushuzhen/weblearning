@@ -1,11 +1,9 @@
-import './assets/main.css'
-import './rem.js';
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-
-const app = createApp(App)
-
-app.use(router)
-
-app.mount('#app')
+import {createApp} from "vue";
+import App from "./App.vue";
+import "vant/lib/index.css";
+import Vant from "vant";
+const app = createApp(App);
+// 使用 Vant 插件
+app.use(Vant);
+// 挂载应用程序
+app.mount("#app");

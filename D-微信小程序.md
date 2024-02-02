@@ -30,6 +30,12 @@ this.setData({show: true});
 data-item="{{item}}"
 ```
 
+**更改for的item**
+
+```
+ wx:for-item 
+```
+
 **顶部标题栏（隐藏）**
 
 ```
@@ -109,41 +115,32 @@ let param = {
 **授权电话**
 
 ```js
-getPhone(event: any) {
-  console.log(event)
-  let that = this
-  wx.login({
-    success: (res) => {
-      console.log(res)
-      let data = {
-        code: res.code,
-        encryptedData: event.detail.encryptedData,
-        iv: event.detail.iv,
-       }
-       let param = {
-         API_URL: api.后端接口,
-         data: data,
-         method: "POST",
-       };
-       getData.result(param).then((res: any) => {
-         if (res.statusCode == 200) {
-           that.setData({
-             'UserData.phone': res.data.data.phone
-           })
-           wx.showToast({
-             title: '授权成功',
-             icon: 'success'
-           })
-         } else {
-           wx.showToast({
-           title: '授权失败',
-           icon: 'error'
-          })
-        }
-      })
-    }
-  })
-},
+getPhone(e) {
+    console.log(e.detail)
+    let that = this
+    wx.login({
+      success: (res) => {
+        e.detail.code = res.code
+        let data = e.detail
+        let param = {
+          API_URL: api.phoneBycodeUrl,
+          data: data,
+          method: 'POST'
+        };
+        getData.result(param).then((response) => {
+          console.log(response.data)
+          if (response.statusCode == 200) {
+            that.setData({
+              phone: response.data.data
+            })
+          } else {
+            Toast.fail("失败，请重新授权！")
+          }
+
+        })
+      },
+    })
+  },
 ```
 
 ## 隐私协议
