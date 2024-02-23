@@ -30,10 +30,10 @@ this.setData({show: true});
 data-item="{{item}}"
 ```
 
-**更改for的item**
+**更改for的item和index**
 
 ```
- wx:for-item 
+ wx:for-item="subitme"   wx:for-index="index"
 ```
 
 **顶部标题栏（隐藏）**
@@ -42,7 +42,27 @@ data-item="{{item}}"
 "navigationStyle":"custom"
 ```
 
-**打电话**
+**获取底部安全距离**
+
+```
+wx.getSystemInfo({
+  success: function (res) { this.setData({ botHeight: Number(res.screenHeight - res.safeArea.bottom) }); }
+});
+```
+
+**获取底部navbar高度**
+
+```
+wx.getSystemInfo({
+  success: function (res) {
+    const tabBarHeight = res.screenHeight - res.windowHeight;
+  //底部导航栏高度
+    that.setData({ tabBarHeight })
+  }
+});
+```
+
+**打电话(catchtap)**
 
 ```js
 catchtap='callPhone' data-item="{{item}}"
@@ -62,10 +82,7 @@ callPhone(e:any) {
 import getTeacherregister from './../../utils/getData'
 
 let data= {}
-let param = {
-  API_URL: api.XXXX,
-  method: "POST",
-  };
+let param = {  API_URL: api.XXXX,  method: "POST",  };
   getData.result(param).then((resl) => {
   console.log("列表",resl);
   if(resl.statusCode == 200){

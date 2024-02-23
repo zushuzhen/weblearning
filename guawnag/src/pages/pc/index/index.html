@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>青岛旅游集团</title>
+    <link rel="stylesheet" href="./static/css/iconfont.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue@3.2.41/dist/vue.global.prod.js"></script> -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue3-sfc-loader@0.8.4/dist/vue3-sfc-loader.min.js"></script> -->
+  </head>
+  <body>
+    <div id="app" style="min-width: 1200px">
+      <my-header></my-header>
+      <index-banner></index-banner>
+      <div class="box-max">
+        <div class="order1-box">
+          <index-seek></index-seek>
+        </div>
+      </div>
+      <div class="order2-box">
+        <index-videos></index-videos>
+      </div>
+        <div class="order3-box">
+          <index-theme></index-theme>
+        </div>
+        <div class="order4-box">
+          <my-link></my-link>
+        </div>
+      <my-footer></my-footer>
+      <div class="big">
+        <div class="promotion">
+          <div class="icon">
+            <i class="iconfont" style="font-size: 50px">&#xeaf1;</i>
+          </div>
+          <div class="plats">推广平台</div>
+          <div class="promo-hover">
+            <div class="plat">全网推广服务平台</div>
+            <div class="grid-container">
+              <div class="grid-item" v-for="item in platform" :key="item.id">
+                <div class="box">
+                  <img class="img" :src="item.img[0].url" alt="" />
+                </div>
+                <!-- <div>{{item.title}}</div> -->
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="back-top">
+          <div class="promo-img">
+            <!-- <img width="35" height="45" src="static/images/rocket.png" alt="" /> -->
+            <i class="iconfont iconsize">&#xe67b;</i>
+          </div>
+          <div>回到顶部</div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

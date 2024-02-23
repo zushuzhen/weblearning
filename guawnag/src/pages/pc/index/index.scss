@@ -1,0 +1,142 @@
+@import "@/assets/css/base.scss";
+
+
+.big {
+  position: absolute;
+  width: 100px;
+  height: 200px;
+  right: 2px;
+  top: 400px;
+  z-index: 999999;
+  .promotion,
+  .back-top {
+    width: 100%;
+    height: 105px;
+    background-color: #0c5cd6;
+    display: none;
+    box-sizing: border-box;
+    border-radius: 5px;
+    color: #fff;
+    font-size: 14px;
+    text-align: center;
+    cursor: pointer;
+    > div:nth-child(2) {
+      margin-top: 10px;
+    }
+    .promo-img{
+      display: inline-block;
+      padding-top: 20px;
+      box-sizing: border-box;
+    }
+  }
+  .promotion {
+    margin-bottom: 2px;
+    position: relative;
+    &:hover .promo-hover {
+      display: block;
+    }
+    
+    .promo-hover { 
+      display: none;
+      padding: 20px;
+      position: absolute;
+      right: 120px;
+      top: -100px;
+      width: 600px;
+      min-height: 450px;
+      color: #000;
+      background-color: #fff;
+      box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.2);
+      .plat {
+        width: 400px;
+        padding: 20px;
+        box-sizing: border-box;
+        font-size: 20px;
+        font-weight: 600;
+        margin: 0 auto;
+        text-align: center;
+        position: relative;
+        &::before {
+          content: "";
+          position: absolute;
+          bottom: 0;
+          left: 0;
+          height: 2px;
+          border-left: 80px solid #0c5cd6;
+          border-right: 320px solid #ccc;
+        }
+      }
+      .grid-container {
+        margin-top: 20px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px 10px;
+        padding: 0 20px;
+        box-sizing: border-box;
+      }
+
+      .grid-item {
+        width: 100%;
+        background-color: #ccc;
+        font-size: 14px;
+        text-align: center;
+        > div:nth-child(2) {
+          margin-top: 10px;
+        }
+        .box {
+          width: 100%;
+          height: 100%;
+        }
+      }
+    }
+    .icon{
+      padding-top: 20px;
+      box-sizing: border-box;
+    }
+    .plats{
+      position: absolute;
+      bottom: 10px;
+      left: calc(50% - 26px);
+    }
+  }
+}
+.el-row {
+  margin-bottom: 20px;
+}
+.el-row:last-child {
+  margin-bottom: 0;
+}
+.el-col {
+  border-radius: 4px;
+}
+
+.grid-content {
+  border-radius: 4px;
+  min-height: 36px;
+}
+.box-max{
+  display: flex;
+  flex-direction: column;
+}
+
+.order1-box {
+  order: 1;
+}
+
+.order2-box {
+  order: 2;
+}
+
+.order3-box {
+  order: 3;
+}
+
+.order4-box {
+  order: 4;
+}
+@media (min-width: 1440px) and (max-width: 1600px) {
+  .box-max{
+    padding: 0 5%;
+  }
+}
+
