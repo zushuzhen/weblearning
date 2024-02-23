@@ -34,6 +34,7 @@ function getEntry() {
 }
 const entry = getEntry();
 module.exports = (env) => {
+  console.log("===============>", process)
   console.log("===============>", env);
   console.log("===============>", process.env.NODE_ENV);
   return {
