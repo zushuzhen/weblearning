@@ -7,7 +7,6 @@ import "./index.scss";
 import {WOW} from "wowjs";
 import ElementPlus from 'element-plus'
 
-
 import 'element-plus/dist/index.css'
 import {createApp, onMounted, ref} from "vue";
 import pcLogin from "@/components/pc/login.vue";

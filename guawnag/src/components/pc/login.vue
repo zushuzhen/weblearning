@@ -14,6 +14,7 @@
   </div>
 </template>
 <script setup>
+
 import {ref, onMounted} from "vue";
 import $bus from "@/utils/bus.js";
 // const props = defineProps(["modelValue", "navList", "modelStyle", "showTitle"]);
